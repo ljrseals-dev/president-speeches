@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "prs"
+version = "0.1.0"
+description = "Analysis of presidential speech corpora — temporal framing, era segmentation, rhetorical features"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{ name = "prs contributors" }]
+keywords = ["nlp", "rhetoric", "presidential", "speech", "corpus"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Text Processing :: Linguistic",
+]
+
+[project.scripts]
+prs = "prs.cli:main"
+prespeech = "prs.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["prs*", "prespeech*"]
